@@ -125,10 +125,10 @@ public class ExampleApi {
 
     @PUT
     @Path("cancel-iou")
-    public Response cancelIOU(@QueryParam("iouValue") int iouValue, @QueryParam("partyName") CordaX500Name partyName) throws InterruptedException, ExecutionException {
-        if (iouValue <= 0) {
-            return Response.status(BAD_REQUEST).entity("Query parameter 'iouValue' must be non-negative.\n").build();
-        }
+    public Response cancelIOU(@QueryParam("iouTxId") String iouTxId, @QueryParam("partyName") CordaX500Name partyName) throws InterruptedException, ExecutionException {
+//        if (iouValue <= 0) {
+//            return Response.status(BAD_REQUEST).entity("Query parameter 'iouValue' must be non-negative.\n").build();
+//        }
         if (partyName == null) {
             return Response.status(BAD_REQUEST).entity("Query parameter 'partyName' missing or has wrong format.\n").build();
         }
